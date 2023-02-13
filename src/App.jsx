@@ -3,40 +3,46 @@ import Header from "./Header";
 import CreateNote from "./CreateNote";
 import Note from "./Note";
 
-const App = () =>{
+const App = () => {
     const [addItem, setAddItem] = useState([]);
 
-    const addNote = (note) =>{
-        setAddItem((prevData) =>{
+    const addNote = (note) => {
+        setAddItem((prevData) => {
             return [...prevData, note];
         });
     };
 
-    const onDelete= (id) =>{
-        setAddItem((olddata) =>{
-           return olddata.filter((currdata, indx) =>{
-                 return indx !== id;
+    const onDelete = (id) => {
+        setAddItem((olddata) => {
+            return olddata.filter((currdata, indx) => {
+                return indx !== id;
             })
         })
     }
 
-    return(
+    return (
         <>
             <Header />
             <CreateNote passNote={addNote} />
-            
-            {addItem.map((val,index) =>{
-                return(
-                    <Note
-                        key={index}
-                        id={index}
-                        title={val.title}
-                        content={val.content}
-                        deleteItem={onDelete}
-                     />    
+            <div className="yui">
+            {addItem.map((val, index) => {
+                return (
+                    <div className="asdf">
+                        <Note
+                            key={index}
+                            id={index}
+                            title={val.title}
+                            content={val.content}
+                            deleteItem={onDelete}
+                        />
+                    </div>
+
                 );
             })}
+            </div>
             
+
+
         </>
     );
 };

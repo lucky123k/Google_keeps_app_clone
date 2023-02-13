@@ -46,6 +46,7 @@ body{
 }
 
 .notes{
+    width: 250px;
     border: 2px solid gray;
     background-color: rgb(246, 204, 126);
     margin-right: 1250px;
@@ -74,3 +75,18 @@ body{
     cursor: pointer;
 }
 
+.main_div123{
+    /* background-color: aqua; */
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.asdf{
+    /* background-color: aqua; */
+    width: 300px;
+}
+.yui{
+    /* background-color: green; */
+    display: flex;
+    flex-wrap: wrap;
+}
